@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta 
+        name="viewport" 
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ShopyFy</title>
+
+    <link rel="stylesheet" href="style2.css">
+
+</head>
+
+<body>
+    <header class="navbar">
+
+        <h2 class="logo" onclick="goHome()">
+            ShopyFy
+        </h2>
+        <div class="search-container">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search products..."
+                onkeyup="showSuggestions()"
+            >
+
+            <button 
+                class="search-btn" 
+                onclick="searchButton()"
+            >
+                🔍
+            </button>
+
+            <div id="suggestions"></div>
+
+        </div>
+        <div class="nav-links">
+
+            <a href="#" onclick="goHome()">
+                Home
+            </a>
+
+            <a href="#" onclick="toggleCart()">
+                Cart 🛒
+            </a>
+        </div>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h4>Category</h4>
+            <ul>
+                <li>
+                    <a href="#"
+                       onclick="filterCategory('Electronics')">
+                        Electronics
+                    </a>
+                </li>
+                <li>
+                    <a href="#"
+                       onclick="filterCategory('Clothing')">
+                        Clothing
+                    </a>
+                </li>
+                <li>
+                    <a href="#"
+                       onclick="filterCategory('Footwear')">
+                        Footwear
+                    </a>
+                </li>
+                <li>
+                    <a href="#"
+                       onclick="filterCategory('Accessories')">
+                        Accessories
+                    </a>
+                </li>
+                <li>
+                    <a href="#"
+                       onclick="filterCategory('Home Appliances')">
+                        Home Appliances
+                    </a>
+                </li>
+                <li>
+                    <a href="#"
+                       onclick="filterCategory('Books')">
+                        Books
+                    </a>
+                </li>
+                <li>
+                    <a href="#"
+                       onclick="filterCategory('Beauty')">
+                        Beauty
+                    </a>
+                </li>
+                <li>
+                    <a href="#"
+                       onclick="goHome()">
+                        All Products
+                    </a>
+                </li>
+            </ul>
+
+            <h4>Sort By Price</h4>
+            <ul>
+                <li>
+                    <a href="#"
+                       onclick="sortPrice('low')">
+                        Low → High
+                    </a>
+                </li>
+                <li>
+                    <a href="#"
+                       onclick="sortPrice('high')">
+                        High → Low
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <main 
+            class="products" 
+            id="productList"
+        >
+        </main>
+    </div>
+
+    <div 
+        class="cart-popup" 
+        id="cartPopup"
+    >
+        <div class="cart-header">
+
+            <h3>🛒 My Cart</h3>
+
+            <button onclick="toggleCart()">
+                ✖
+            </button>
+
+        </div>
+        <div id="cartItems"></div>
+    </div>
+
+    <script src="script1.js"></script>
+
+</body>
+</html>
